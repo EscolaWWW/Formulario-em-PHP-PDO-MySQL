@@ -53,7 +53,11 @@ class Funcionario {
             $this->email = $dados['email'];
             $this->senha = sha1($dados['senha']);
             $this->dataCadastro = "0000-00-00";
+<<<<<<< HEAD
             $cst = $this->con->conectar()->prepare("INSERT INTO (`nome`, `email`, `senha`, `data_cadastro`) VALUES (:nome, :email, :senha, :dt);");
+=======
+            $cst = $this->con->conectar()->prepare("INSET INTO (`nome`, `email`, `senha`, `data_cadastro`) VALUES (:nome, :email, :senha, :dt);");
+>>>>>>> origin/master
             $cst->bindParam(":nome", $this->nome, PDO::PARAM_STR);
             $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
             $cst->bindParam(":senha", $this->senha, PDO::PARAM_STR);
