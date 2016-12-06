@@ -1,0 +1,66 @@
+/* CSS Document */
+
+#lista{
+	font: 13px Verdana, Geneva, sans-serif;
+	border: 1px solid #999;
+	padding: 5px;
+	float: left;
+	width: 300px;
+	height: 400px;
+}
+
+#lista .funcionario{
+	height: 16px;
+}
+
+#lista .funcionario + .funcionario{
+	margin: 7px 0 0 0;
+}
+
+#lista .funcionario img{
+	border: 0;
+}
+
+#lista .funcionario .nome{
+	float: left;
+	width: 245px;
+}
+
+#lista .funcionario .editar{
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+#lista .funcionario .excluir{
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+#formulario{
+	float: left;
+	width: 300px;
+	margin: 0 0 0 20px;
+}
+
+#formulario label{
+	font: 13px Verdana, Geneva, sans-serif;
+}
+
+#formulario input[name="nome"]{
+	width: 295px;
+}
+
+#formulario input[name="email"]{
+	width: 293px;
+}
+
+#formulario input[name="senha"]{
+	width: 295px;
+}
+
+#formulario input[type="submit"]{
+	font: 20px Verdana, Geneva, sans-serif;
+	width: 299px;
+}
+
+
