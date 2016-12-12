@@ -21,11 +21,7 @@ class Conexao{
             }
             return self::$pdo;
         } catch (PDOException $ex) {
-<<<<<<< HEAD
 			echo $e->getMessage();
-=======
-
->>>>>>> origin/master
         }
     }
     
