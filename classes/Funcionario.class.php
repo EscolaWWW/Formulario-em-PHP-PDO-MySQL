@@ -49,10 +49,10 @@ class Funcionario {
     
     public function queryInsert($dados){
         try{
-            $this->nome = $dados['nome'];
+            $this->nome = $this->objfc->tratarCaracter($dados['nome'], 1);
             $this->email = $dados['email'];
             $this->senha = sha1($dados['senha']);
-            $this->dataCadastro = "0000-00-00";
+            $this->dataCadastro = $this->objfc->dataAtual(2);
             $cst = $this->con->conectar()->prepare("INSERT INTO `funcionario` (`nome`, `email`, `senha`, `data_cadastro`) VALUES (:nome, :email, :senha, :dt);");
             $cst->bindParam(":nome", $this->nome, PDO::PARAM_STR);
             $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
@@ -71,7 +71,7 @@ class Funcionario {
     public function queryUpdate($dados){
         try{
             $this->idFuncionario = $dados['func'];
-            $this->nome = $dados['nome'];
+            $this->nome = $this->objfc->tratarCaracter($dados['nome'], 1);
             $this->email = $dados['email'];
             $cst = $this->con->conectar()->prepare("UPDATE `funcionario` SET  `nome` = :nome, `email` = :email WHERE `idFuncionario` = :idFunc;");
             $cst->bindParam(":idFunc", $this->idFuncionario, PDO::PARAM_INT);
