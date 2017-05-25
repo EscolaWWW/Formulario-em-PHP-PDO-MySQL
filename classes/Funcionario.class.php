@@ -70,7 +70,7 @@ class Funcionario {
     
     public function queryUpdate($dados){
         try{
-            $this->idFuncionario = $dados['func'];
+            $this->idFuncionario = $this->objfc->base64($dados['func'], 2);
             $this->nome = $this->objfc->tratarCaracter($dados['nome'], 1);
             $this->email = $dados['email'];
             $cst = $this->con->conectar()->prepare("UPDATE `funcionario` SET  `nome` = :nome, `email` = :email WHERE `idFuncionario` = :idFunc;");
