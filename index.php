@@ -66,7 +66,7 @@ if(isset($_GET['acao'])){
         <?php } ?>
         <br>
         <input type="submit" name="<?=(isset($_GET['acao']) == 'edit')?('btAlterar'):('btCadastrar')?>" value="<?=(isset($_GET['acao']) == 'edit')?('Alterar'):('Cadastrar')?>">
-        <input type="hidden" name="func" value="<?=(isset($func['idFuncionario']))?($func['idFuncionario']):('')?>">
+        <input type="hidden" name="func" value="<?=(isset($func['idFuncionario']))?($objFcs->base64($func['idFuncionario'], 1)):('')?>">
     </form>
 </div>
  
