@@ -89,7 +89,7 @@ class Funcionario {
     
     public function queryDelete($dado){
         try{
-            $this->idFuncionario = $dado;
+            $this->idFuncionario = $this->objfc->base64($dado, 2);
             $cst = $this->con->conectar()->prepare("DELETE FROM `funcionario` WHERE `idFuncionario` = :idFunc;");
             $cst->bindParam(":idFunc", $this->idFuncionario, PDO::PARAM_INT);
             if($cst->execute()){
